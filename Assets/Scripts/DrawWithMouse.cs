@@ -15,7 +15,7 @@ public class DrawWithMouse : MonoBehaviour
         {
             LayerMask mask = 1 << 8;
 
-            if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
             {
                 Debug.Log("Hit");
                 DrawableSurface script = hit.collider.gameObject.GetComponent<DrawableSurface>();

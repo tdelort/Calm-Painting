@@ -32,6 +32,9 @@ public class PlayerControlleFlat : MonoBehaviour
         v_axis = Input.GetAxis("Vertical");
         mouse_x += Input.GetAxis("Mouse X");
         mouse_y += Input.GetAxis("Mouse Y");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     private void FixedUpdate()
@@ -48,5 +51,8 @@ public class PlayerControlleFlat : MonoBehaviour
         rotx = Mathf.Clamp(rotx, -90, 90);
         Vector3 camRotation = cam.transform.rotation.eulerAngles;
         cam.transform.rotation = Quaternion.Euler(-rotx, camRotation.y, camRotation.z);
+
+        if (Mathf.Abs(h_axis) < 0.1 && Mathf.Abs(v_axis) < 0.1)
+            _rigi.velocity = new Vector3(_rigi.velocity.x * 0.9f, _rigi.velocity.y, _rigi.velocity.z * 0.9f);
     }
 }

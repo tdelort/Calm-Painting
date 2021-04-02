@@ -43,7 +43,16 @@ public class DrawableSurface : MonoBehaviour
         Graphics.Blit(tmp, _paintTex, _drawMat);
         RenderTexture.ReleaseTemporary(tmp);
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _paintTex = new RenderTexture(1024, 1024, 0);
+            _paintTex.Create();
+            _mat.SetTexture("_MainTex", _paintTex);
+        }
+    }
 
 
     //Setters

@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b6151263ea7464b920e6ecc550f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  acc: 1000
+  speed: 5
+  acc: 5000
   view_speed: 90
   cam: {fileID: 963194227}
 --- !u!54 &130956709
