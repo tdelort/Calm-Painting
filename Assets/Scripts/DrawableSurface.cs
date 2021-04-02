@@ -20,10 +20,10 @@ public class DrawableSurface : MonoBehaviour
     {
 
         _drawMat = new Material(_drawShader);
-        _drawMat.SetColor("_Color", Color.red);
-        _drawMat.SetFloat("_SizeX", startSize);
-        _drawMat.SetFloat("_SizeY", startSize);
-        _drawMat.SetFloat("_Strength", 0.1f);
+        _drawMat.SetColor("_Color", Color.black);
+        _drawMat.SetFloat("_SizeX", startSize * transform.localScale.x);
+        _drawMat.SetFloat("_SizeY", startSize * transform.localScale.z);
+        _drawMat.SetFloat("_Strength", 0.3f);
         _drawMat.SetTexture("_MainTex", Texture2D.whiteTexture);
         _drawMat.SetTexture("_BrushTex", _brushTex);
 

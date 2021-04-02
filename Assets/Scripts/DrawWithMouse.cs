@@ -17,6 +17,7 @@ public class DrawWithMouse : MonoBehaviour
 
             if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
             {
+                Debug.Log("Hit");
                 DrawableSurface script = hit.collider.gameObject.GetComponent<DrawableSurface>();
                 script.OnHit(hit.textureCoord);
             }
